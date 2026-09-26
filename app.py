@@ -15,7 +15,7 @@ def healthy():
 
 
 if __name__ == "__main__":
-    host = os.getenv("FASTAPI_RUN_HOST", "0.0.0.0")
-    port = int(os.getenv("FASTAPI_RUN_PORT", 8000))
+    host = os.getenv("UVICORN_HOST", "0.0.0.0")
+    port = int(os.getenv("UVICORN_PORT", 8000))
     uvicorn.run(app=app, host=host, port=port)
     print(f"FastAPI app running on http://{host}:{port}")
